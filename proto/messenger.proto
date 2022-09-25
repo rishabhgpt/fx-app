@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/rishabhgpt/fx-app/spec";
+
+message Message {
+ string id = 1;
+ string body = 2;  
+}
+
+message Reply {
+ string id = 1;
+ string status = 2;
+}
+
+service MessageService {
+ rpc SendMessage(Message) returns (Reply) {}
+}
